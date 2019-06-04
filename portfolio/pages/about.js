@@ -4,6 +4,7 @@ import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
 
 import Layout from '../components/Layout';
+import Error from '../pages/_error';
 
 const About = (props) => {
 
@@ -19,6 +20,10 @@ const About = (props) => {
   //   )();
   // }, []);
 
+  if (props.statusCode) {
+    return <Error statusCode = { props.statusCode }/>
+  }
+
   return (
     <Layout title = "About">
       <p>{ props.user.name }</p>
@@ -29,8 +34,9 @@ const About = (props) => {
 
 About.getInitialProps = async ({ req }) => {
   const res = await fetch('https://api.github.com/users/ngquangan');
+  const statusCode = res.status > 200 ? res.status : false;
   const json = await res.json();
-  return { user: { name: json.name, avatar: json.avatar_url }};
+  return { user: { name: json.name, avatar: json.avatar_url }, statusCode};
 };
 
 
