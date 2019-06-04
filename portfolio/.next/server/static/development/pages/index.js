@@ -114,7 +114,13 @@ var Index = function Index() {
       lineNumber: 3
     },
     __self: this
-  }, "Welcome to homepage");
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 4
+    },
+    __self: this
+  }, "Home"), "Welcome to homepage");
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
