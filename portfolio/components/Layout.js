@@ -19,9 +19,12 @@ export default (props) => {
         <Link href="/"><a >Home</a></Link>
         <Link href="/about"><a >About</a></Link>
         <Link href="/hireme"><a >Hire me</a></Link>
+        <Link href="/blog"><a >Blog</a></Link>
       </header>
-      <h1>{ props.title } </h1>
-      { props.children }
+      <div className = "container">
+        <h1>{ props.title } </h1>
+        { props.children }
+      </div>
       <footer>&copy; { new Date().getFullYear() }</footer>
       <style jsx>
         {`
@@ -46,6 +49,11 @@ export default (props) => {
             header a:hover {
               color: lightgrey;
               font-weight: 1em;
+            }
+            .container {
+              max-width: 80%;
+              margin: 0 auto;
+              text-align: center
             }
             footer {
               padding: 1em
