@@ -56,12 +56,17 @@ export default (props) => {
               text-align: center
             }
             footer {
-              padding: 1em
+              padding: 1em;
+              width: 100%;
+              text-align: center
             }
           `}
       </style>
       <style global jsx>
         {`
+        *, *:after, *:before {
+          box-sizing: border-box;
+        }
           body {
             margin: 0;
             font-size: 110%;

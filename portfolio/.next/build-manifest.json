@@ -19,11 +19,11 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/hireme": [
+    "/index": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/index": [
+    "/post": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
