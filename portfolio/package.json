@@ -4,7 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "next -p 4444"
+    "dev": "next -p 4444",
+    "build": "next build",
+    "export": "next export",
+    "deploy": "cd out && now --public"
   },
   "dependencies": {
     "isomorphic-unfetch": "^3.0.0",
