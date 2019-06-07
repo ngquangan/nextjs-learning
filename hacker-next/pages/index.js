@@ -1,17 +1,14 @@
 import fetch from 'isomorphic-fetch';
 import Error from 'next/error';
+import StoryList from '../components/StoryList';
+import Layout from '../components/Layout';
 
 const Index = (props) => {
   if (props.stories.length === 0) return <Error statusCode = { 503 } />;
   return (
-    <div>
-      <h1>Hacker next</h1>
-      <div>
-        { props.stories.map(story => (
-          <h3 key = { story.id } >{ story.title }</h3>
-        )) }
-      </div>
-    </div>
+    <Layout title = "Hacker Next" description = "Hacker news clone with NextJS">
+      <StoryList stories = { props.stories } />
+    </Layout>
   )
 }
 
