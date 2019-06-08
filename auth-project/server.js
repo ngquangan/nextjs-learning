@@ -33,6 +33,25 @@ app.prepare().then(() => {
   server.use(express.json()); // use json data from client
   server.use(cookieParser(CONSTANTS.COOKIE_SECRET)); 
 
+  server.get('/api/profile', async (req, res) => { // Should at top
+    const { signedCookies: { token } } = req;
+
+    if (token && token.email) {
+      const { data } = await axios.get('https://jsonplaceholder.typicode.com/users')
+      const user = data.find(user => {
+        return user.email === token.email && user;
+      })
+      return res.status(200).json({
+        success: true,
+        user,
+      })
+    }
+
+    return res.status(404).json({
+      success: false
+    })
+  });
+
   server.get('*', (req, res) => { // Get all route GET from next
     return handle(req, res);
   });
