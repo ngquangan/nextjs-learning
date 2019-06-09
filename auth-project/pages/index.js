@@ -1,12 +1,15 @@
 import Layout from "../components/Layout";
-import Link from 'next/link';
 
-const Home = () => {
+import { authInitialProps } from '../lib/auth';
+
+const Home = (props) => {
   return (
-    <Layout title = "Home">
+    <Layout title = "Home" { ...props }>
       <div>Test 123</div>
     </Layout>
   )
 }
+
+Home.getInitialProps = authInitialProps();
 
 export default Home;

@@ -80,6 +80,11 @@ app.prepare().then(() => {
     });
   });
 
+  server.post('/api/logout', (req, res) => {
+    res.clearCookie('token', CONSTANTS.COOKIE_OPTION);
+    return res.sendStatus(204);
+  });
+
   server.listen(port, err => {
     if (err) throw err;
     console.log('Listening on PORT ' + port);
