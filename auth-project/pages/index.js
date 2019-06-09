@@ -1,6 +1,11 @@
+import Layout from "../components/Layout";
+import Link from 'next/link';
+
 const Home = () => {
   return (
-    <div>Test 123</div>
+    <Layout title = "Home">
+      <div>Test 123</div>
+    </Layout>
   )
 }
 
