@@ -75,7 +75,8 @@ app.prepare().then(() => {
     res.cookie('token', userData, CONSTANTS.COOKIE_OPTION)
 
     return res.status(200).json({
-      ...userData
+      success: true,
+      user: userData
     });
   });
 

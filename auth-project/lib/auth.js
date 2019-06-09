@@ -4,7 +4,7 @@ axios.defaults.withCredentials = true; // set auth with cookie
 
 export const loginUser = async (email, password) => {
   const { data } = await axios.post('/api/login', { email, password });
-  return data;
+  return data.success;
 }
 
 export const getUserProfile = async () => {
